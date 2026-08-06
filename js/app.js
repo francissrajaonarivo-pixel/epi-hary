@@ -52,8 +52,6 @@ document.getElementById("categoryFilters").addEventListener("click", (e) => {
 });
 
 // --- Formulaire de contact (redirection WhatsApp) ---
-const WHATSAPP_NUMBER = "261389510134"; // 03 89 51 01 34 (Madagascar, +261)
-
 document.getElementById("contactForm").addEventListener("submit", (e) => {
   e.preventDefault();
   const name = e.target.querySelector('input[type="text"]').value;

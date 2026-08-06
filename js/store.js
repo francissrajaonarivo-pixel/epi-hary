@@ -17,6 +17,25 @@ function getProductById(id) {
   return PRODUCTS.find((p) => p.id === Number(id));
 }
 
+// --- Coordonnées & conditions de vente EPI-HARY ---
+const WHATSAPP_NUMBER = "261389510134"; // 03 89 51 01 34 (Madagascar, +261)
+
+const PAYMENT_METHODS = [
+  { name: "Mvola", number: "038 95 101 34", holder: "Rajaonarivo Harinaivo Jean Francis" },
+  { name: "Orange Money", number: "032 90 426 87", holder: "Rajaonarivo Harinaivo Jean Francis" },
+];
+
+const DELIVERY_FEE = 3000; // Ariary
+const DELIVERY_LABEL = "Livraison le jour même — 3 000 Ar";
+
+const HAS_ORDERED_KEY = "epifrais_has_ordered";
+function isFirstOrder() {
+  return !localStorage.getItem(HAS_ORDERED_KEY);
+}
+function markOrdered() {
+  localStorage.setItem(HAS_ORDERED_KEY, "1");
+}
+
 // --- État du panier (persisté en localStorage) ---
 let cart = JSON.parse(localStorage.getItem("epifrais_cart") || "{}");
 
@@ -122,11 +141,43 @@ document.getElementById("cartBtn").addEventListener("click", openCart);
 document.getElementById("closeCart").addEventListener("click", closeCartDrawer);
 cartOverlay.addEventListener("click", closeCartDrawer);
 
-// --- Commande (démo) ---
+// --- Commande (envoi WhatsApp + instructions de paiement) ---
 const modalOverlay = document.getElementById("modalOverlay");
+const modalBody = document.getElementById("modalBody");
 
 document.getElementById("checkoutBtn").addEventListener("click", () => {
   if (cartCount() === 0) return;
+
+  const freeDelivery = isFirstOrder();
+  const deliveryFee = freeDelivery ? 0 : DELIVERY_FEE;
+  const productsTotal = cartTotal();
+  const grandTotal = productsTotal + deliveryFee;
+
+  const orderLines = Object.entries(cart)
+    .map(([id, qty]) => {
+      const p = getProductById(id);
+      return p ? `- ${p.name} x${qty} — ${euros(p.price * qty)}` : "";
+    })
+    .filter(Boolean)
+    .join("\n");
+
+  const text =
+    `Bonjour EPI-HARY, je souhaite commander :\n\n${orderLines}\n\n` +
+    `Sous-total : ${euros(productsTotal)}\n` +
+    `Livraison : ${freeDelivery ? "Offerte (1ère commande)" : euros(deliveryFee)}\n` +
+    `Total : ${euros(grandTotal)}\n\n` +
+    `Merci de me confirmer la commande.`;
+
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
+
+  const paymentList = PAYMENT_METHODS.map((m) => `<li><strong>${m.name}</strong> : ${m.number} (${m.holder})</li>`).join("");
+  modalBody.innerHTML = `
+    <p>Votre commande a été préparée et envoyée sur WhatsApp. Confirmez l'envoi dans l'application, puis réglez par :</p>
+    <ul class="payment-list">${paymentList}</ul>
+    <p>${freeDelivery ? "🎉 Livraison offerte pour votre première commande !" : DELIVERY_LABEL}</p>
+  `;
+
+  markOrdered();
   cart = {};
   saveCart();
   renderCart();

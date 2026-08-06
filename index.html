@@ -17,6 +17,7 @@
     <a href="#" class="logo">🥬 EPI-HARY</a>
     <nav class="main-nav">
       <a href="#produits">Produits</a>
+      <a href="#livraison-paiement">Livraison</a>
       <a href="#a-propos">À propos</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -35,6 +36,10 @@
   </div>
 </section>
 
+<div class="promo-banner">
+  <div class="container">🎉 Offre de lancement : <strong>livraison gratuite sur votre première commande</strong> !</div>
+</div>
+
 <main class="container">
 
   <section class="trust-section">
@@ -50,12 +55,17 @@
     </div>
     <div class="trust-item">
       <span class="trust-icon">🚚</span>
-      <h3>Livraison rapide</h3>
-      <p>Vos courses livrées directement chez vous, sans attendre.</p>
+      <h3>Livraison le jour même</h3>
+      <p>3 000 Ar, offerte pour votre première commande.</p>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">💳</span>
+      <h3>Paiement mobile</h3>
+      <p>Mvola et Orange Money acceptés.</p>
     </div>
     <div class="trust-item">
       <span class="trust-icon">💬</span>
-      <h3>Contact direct</h3>
+      <h3>Réponse rapide</h3>
       <p>Une question ? Écrivez-nous par téléphone ou WhatsApp.</p>
     </div>
   </section>
@@ -82,6 +92,25 @@
     <p>EPI-HARY est votre épicerie en ligne de quartier. Nous sélectionnons des produits frais et de qualité,
        livrés directement chez vous. Ce site est une première version — de nouvelles fonctionnalités
        (paiement en ligne, comptes clients, suivi de commande) arrivent bientôt !</p>
+  </section>
+
+  <section id="livraison-paiement" class="delivery-payment-section">
+    <h2>Livraison &amp; Paiement</h2>
+    <div class="dp-grid">
+      <div class="dp-card">
+        <h3>🚚 Livraison</h3>
+        <p class="dp-highlight">3 000 Ar — livraison le jour même</p>
+        <p>🎉 Offerte pour votre première commande.</p>
+      </div>
+      <div class="dp-card">
+        <h3>💳 Paiement mobile</h3>
+        <ul class="payment-list">
+          <li><strong>Mvola</strong> : 038 95 101 34 (Rajaonarivo Harinaivo Jean Francis)</li>
+          <li><strong>Orange Money</strong> : 032 90 426 87 (Rajaonarivo Harinaivo Jean Francis)</li>
+        </ul>
+        <p>Réglez après confirmation de votre commande sur WhatsApp.</p>
+      </div>
+    </div>
   </section>
 
   <section id="contact" class="contact-section">
@@ -142,8 +171,8 @@
 <!-- Confirmation de commande -->
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal">
-    <h3>Commande confirmée ! 🎉</h3>
-    <p>Merci pour votre commande. Ceci est une démonstration — aucun paiement réel n'a été effectué.</p>
+    <h3>Commande envoyée ! 🎉</h3>
+    <div id="modalBody"><p>Merci pour votre commande.</p></div>
     <button class="btn btn-primary" id="closeModal">Fermer</button>
   </div>
 </div>
