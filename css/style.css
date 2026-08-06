@@ -427,6 +427,10 @@ a { text-decoration: none; color: inherit; }
   border: 1px solid var(--border);
 }
 
+.contact-map iframe {
+  transition: opacity 0.35s ease;
+}
+
 @media (max-width: 780px) {
   .contact-layout {
     grid-template-columns: 1fr;
