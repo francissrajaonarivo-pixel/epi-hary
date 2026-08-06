@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2f9e44"/>
+      <stop offset="100%" stop-color="#237436"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="120" r="180" fill="#ffffff" opacity="0.06"/>
+  <circle cx="120" cy="540" r="220" fill="#ffffff" opacity="0.06"/>
+  <text x="600" y="270" text-anchor="middle" font-family="Poppins, Segoe UI, sans-serif" font-size="130" font-weight="800" fill="#ffffff">🥬 EPI-HARY</text>
+  <text x="600" y="345" text-anchor="middle" font-family="Inter, Segoe UI, sans-serif" font-size="42" font-weight="600" fill="#eaf6ec">Votre épicerie en ligne</text>
+  <text x="600" y="430" text-anchor="middle" font-family="Inter, Segoe UI, sans-serif" font-size="30" fill="#ffffff">Produits frais · Commande WhatsApp · Livraison le jour même</text>
+  <text x="600" y="500" text-anchor="middle" font-family="Inter, Segoe UI, sans-serif" font-size="26" fill="#d7ecd9">Mahajanga, Madagascar</text>
+</svg>

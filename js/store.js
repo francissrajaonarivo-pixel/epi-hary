@@ -28,9 +28,16 @@ const PAYMENT_METHODS = [
 const DELIVERY_FEE = 3000; // Ariary
 const DELIVERY_LABEL = "Livraison le jour même — 3 000 Ar";
 
+// Offre de lancement limitée dans le temps (au-delà, livraison payante pour tous).
+const LAUNCH_OFFER_END = new Date("2026-09-15T23:59:59");
+const LAUNCH_OFFER_LABEL = "Offre de lancement valable jusqu'au 15 septembre 2026";
+
 const HAS_ORDERED_KEY = "epifrais_has_ordered";
+function isLaunchOfferActive() {
+  return new Date() <= LAUNCH_OFFER_END;
+}
 function isFirstOrder() {
-  return !localStorage.getItem(HAS_ORDERED_KEY);
+  return isLaunchOfferActive() && !localStorage.getItem(HAS_ORDERED_KEY);
 }
 function markOrdered() {
   localStorage.setItem(HAS_ORDERED_KEY, "1");

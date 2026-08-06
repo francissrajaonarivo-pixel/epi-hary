@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EPI-HARY — Épicerie en ligne</title>
 <meta name="description" content="EPI-HARY, votre épicerie en ligne : produits frais, commande simple, livraison rapide.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥬</text></svg>">
+
+<!-- Aperçu de lien (WhatsApp, Facebook, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EPI-HARY">
+<meta property="og:title" content="EPI-HARY — Épicerie en ligne">
+<meta property="og:description" content="Produits frais, commande simple via WhatsApp, livraison le jour même à Mahajanga.">
+<meta property="og:url" content="https://francissrajaonarivo-pixel.github.io/epi-hary/">
+<meta property="og:image" content="https://francissrajaonarivo-pixel.github.io/epi-hary/images/og-banner.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EPI-HARY — Épicerie en ligne">
+<meta name="twitter:description" content="Produits frais, commande simple via WhatsApp, livraison le jour même à Mahajanga.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -37,7 +49,7 @@
 </section>
 
 <div class="promo-banner">
-  <div class="container">🎉 Offre de lancement : <strong>livraison gratuite sur votre première commande</strong> !</div>
+  <div class="container">🎉 Offre de lancement : <strong>livraison gratuite sur votre première commande</strong> — jusqu'au 15 septembre 2026 !</div>
 </div>
 
 <main class="container">
@@ -56,7 +68,7 @@
     <div class="trust-item">
       <span class="trust-icon">🚚</span>
       <h3>Livraison le jour même</h3>
-      <p>3 000 Ar, offerte pour votre première commande.</p>
+      <p>3 000 Ar, offerte pour votre première commande (jusqu'au 15/09).</p>
     </div>
     <div class="trust-item">
       <span class="trust-icon">💳</span>
@@ -100,7 +112,7 @@
       <div class="dp-card">
         <h3>🚚 Livraison</h3>
         <p class="dp-highlight">3 000 Ar — livraison le jour même</p>
-        <p>🎉 Offerte pour votre première commande.</p>
+        <p>🎉 Offerte pour votre première commande, jusqu'au 15 septembre 2026.</p>
       </div>
       <div class="dp-card">
         <h3>💳 Paiement mobile</h3>
@@ -126,17 +138,39 @@
           <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
       </div>
-      <div class="contact-map">
-        <iframe
-          id="mapFrame"
-          src="https://www.google.com/maps?q=-15.7084879,46.3122439&z=3&output=embed"
-          width="100%"
-          height="320"
-          style="border:0"
-          allowfullscreen=""
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Localisation EPI-HARY">
-        </iframe>
+      <div class="contact-map-wrap">
+        <div class="contact-map">
+          <iframe
+            id="mapFrame"
+            src=""
+            width="100%"
+            height="320"
+            style="border:0"
+            allowfullscreen=""
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localisation EPI-HARY">
+          </iframe>
+          <div class="map-zoom-control">
+            <button type="button" id="zoomInBtn" aria-label="Zoomer">+</button>
+            <button type="button" id="zoomOutBtn" aria-label="Dézoomer">−</button>
+          </div>
+          <div class="wide-marker" id="wideMarker">📍<span>EPI-HARY</span></div>
+        </div>
+        <div class="map-actions">
+          <a
+            class="map-directions-link"
+            href="https://www.google.com/maps/dir/?api=1&destination=-15.7084879,46.3122439"
+            target="_blank"
+            rel="noopener">
+            📍 Itinéraire
+          </a>
+          <button type="button" class="map-directions-link active" id="satelliteBtn">
+            🗺️ Vue Plan
+          </button>
+          <button type="button" class="map-directions-link" id="tilt3dBtn">
+            🧊 Vue 3D
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -177,6 +211,7 @@
   </div>
 </div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="js/store.js"></script>
 <script src="js/app.js"></script>
 </body>
