@@ -18,7 +18,7 @@ function getProductById(id) {
 }
 
 // --- Coordonnées & conditions de vente EPI-HARY ---
-const WHATSAPP_NUMBER = "261389510134"; // 03 89 51 01 34 (Madagascar, +261)
+const WHATSAPP_NUMBER = "261389510134"; // 038 95 101 34 (Madagascar, +261)
 
 const PAYMENT_METHODS = [
   { name: "Mvola", number: "038 95 101 34", holder: "Rajaonarivo Harinaivo Jean Francis" },
