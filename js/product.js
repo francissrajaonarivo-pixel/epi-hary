@@ -22,7 +22,7 @@ if (!product) {
     <div class="product-info">
       <span class="product-category-tag">${CATEGORY_LABELS[product.category] || ""}</span>
       <h1>${product.name}</h1>
-      <div class="product-detail-price">${euros(product.price)}</div>
+      <div class="product-detail-price">${formatPrice(product.price)}</div>
 
       <div class="qty-selector">
         <span>Quantité</span>
@@ -73,7 +73,7 @@ if (!product) {
         <div class="product-desc">${p.desc}</div>
       </a>
       <div class="product-footer">
-        <span class="product-price">${euros(p.price)}</span>
+        <span class="product-price">${formatPrice(p.price)}</span>
         <button class="add-btn" data-id="${p.id}">Ajouter</button>
       </div>
     </div>`

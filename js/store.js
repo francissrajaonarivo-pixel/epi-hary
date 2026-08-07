@@ -11,7 +11,7 @@ const CATEGORY_LABELS = {
   boissons: "Boissons",
 };
 
-const euros = (n) => n.toFixed(2).replace(".", ",") + " €";
+const formatPrice = (n) => Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " Ar";
 
 // --- Mode nuit ---
 const THEME_KEY = "epifrais_theme";
@@ -115,7 +115,7 @@ const cartCountEl = document.getElementById("cartCount");
 
 function renderCart() {
   cartCountEl.textContent = cartCount();
-  cartTotalEl.textContent = euros(cartTotal());
+  cartTotalEl.textContent = formatPrice(cartTotal());
 
   const entries = Object.entries(cart);
   if (entries.length === 0) {
@@ -132,7 +132,7 @@ function renderCart() {
         <div class="cart-item-emoji">${p.emoji}</div>
         <div class="cart-item-info">
           <div class="cart-item-name">${p.name}</div>
-          <div class="cart-item-price">${euros(p.price)} x ${qty}</div>
+          <div class="cart-item-price">${formatPrice(p.price)} x ${qty}</div>
         </div>
         <div class="qty-controls">
           <button data-action="dec" data-id="${p.id}">−</button>
@@ -187,16 +187,16 @@ document.getElementById("checkoutBtn").addEventListener("click", () => {
   const orderLines = Object.entries(cart)
     .map(([id, qty]) => {
       const p = getProductById(id);
-      return p ? `- ${p.name} x${qty} — ${euros(p.price * qty)}` : "";
+      return p ? `- ${p.name} x${qty} — ${formatPrice(p.price * qty)}` : "";
     })
     .filter(Boolean)
     .join("\n");
 
   const text =
     `Bonjour EPI-HARY, je souhaite commander :\n\n${orderLines}\n\n` +
-    `Sous-total : ${euros(productsTotal)}\n` +
-    `Livraison : ${freeDelivery ? "Offerte (1ère commande)" : euros(deliveryFee)}\n` +
-    `Total : ${euros(grandTotal)}\n\n` +
+    `Sous-total : ${formatPrice(productsTotal)}\n` +
+    `Livraison : ${freeDelivery ? "Offerte (1ère commande)" : formatPrice(deliveryFee)}\n` +
+    `Total : ${formatPrice(grandTotal)}\n\n` +
     `Merci de me confirmer la commande.`;
 
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");

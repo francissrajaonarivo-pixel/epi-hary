@@ -29,7 +29,7 @@ function renderProducts(category = "all") {
         <div class="product-desc">${p.desc}</div>
       </a>
       <div class="product-footer">
-        <span class="product-price">${euros(p.price)}</span>
+        <span class="product-price">${formatPrice(p.price)}</span>
         <button class="add-btn" data-id="${p.id}">Ajouter</button>
       </div>
     </div>`
