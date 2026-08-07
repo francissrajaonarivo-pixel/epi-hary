@@ -13,6 +13,30 @@ const CATEGORY_LABELS = {
 
 const euros = (n) => n.toFixed(2).replace(".", ",") + " €";
 
+// --- Mode nuit ---
+const THEME_KEY = "epifrais_theme";
+const themeToggle = document.getElementById("themeToggle");
+
+function updateThemeIcon() {
+  const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+  themeToggle.textContent = isDark ? "☀️" : "🌙";
+}
+
+if (themeToggle) {
+  updateThemeIcon();
+  themeToggle.addEventListener("click", () => {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    if (isDark) {
+      document.documentElement.removeAttribute("data-theme");
+      localStorage.setItem(THEME_KEY, "light");
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem(THEME_KEY, "dark");
+    }
+    updateThemeIcon();
+  });
+}
+
 function getProductById(id) {
   return PRODUCTS.find((p) => p.id === Number(id));
 }

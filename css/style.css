@@ -7,8 +7,24 @@
   --text: #23291f;
   --text-muted: #6b7061;
   --border: #e7e4dc;
+  --soft-bg: #f3f7ef;
+  --soft-hover: #eaf6ec;
   --radius: 14px;
   --shadow: 0 4px 16px rgba(30, 30, 20, 0.06);
+}
+
+:root[data-theme="dark"] {
+  --green: #3fae53;
+  --green-dark: #6fd684;
+  --orange: #ffb84d;
+  --bg: #14170f;
+  --card-bg: #1e2318;
+  --text: #eef1e9;
+  --text-muted: #9aa38d;
+  --border: #2e3527;
+  --soft-bg: #232a1c;
+  --soft-hover: #2a3322;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,6 +34,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1, h2, h3, .logo, .btn {
@@ -88,6 +105,29 @@ a { text-decoration: none; color: inherit; }
 
 .cart-btn:hover { background: var(--green-dark); }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.theme-toggle:hover { background: var(--soft-bg); }
+
 /* Hero */
 .hero {
   position: relative;
@@ -109,7 +149,7 @@ a { text-decoration: none; color: inherit; }
   background-image: url("../images/hero-boutique.jpg");
   background-position: center;
   background-size: cover;
-  filter: blur(30px) brightness(0.55);
+  filter: blur(22px) brightness(0.8);
   transform: scale(1.2);
   z-index: 0;
 }
@@ -139,7 +179,7 @@ a { text-decoration: none; color: inherit; }
 
 .hero-badge {
   display: inline-block;
-  background: white;
+  background: var(--card-bg);
   border: 1px solid var(--border);
   color: var(--green-dark);
   font-weight: 600;
@@ -333,7 +373,7 @@ a { text-decoration: none; color: inherit; }
 .product-emoji {
   font-size: 2.6rem;
   text-align: center;
-  background: #f3f7ef;
+  background: var(--soft-bg);
   border-radius: 10px;
   padding: 18px 0;
 }
@@ -430,7 +470,7 @@ a { text-decoration: none; color: inherit; }
 .payment-list li {
   font-size: 0.92rem;
   color: var(--text);
-  background: #f3f7ef;
+  background: var(--soft-bg);
   border-radius: 8px;
   padding: 8px 12px;
 }
@@ -493,7 +533,7 @@ a { text-decoration: none; color: inherit; }
   width: 34px;
   height: 34px;
   border: none;
-  background: white;
+  background: var(--card-bg);
   color: var(--green-dark);
   font-size: 1.2rem;
   font-weight: 700;
@@ -506,7 +546,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .map-zoom-control button:hover {
-  background: #eaf6ec;
+  background: var(--soft-hover);
 }
 
 .contact-map.is-tilted .map-zoom-control {
@@ -596,7 +636,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .map-directions-link:hover {
-  background: #eaf6ec;
+  background: var(--soft-hover);
   border-color: var(--green);
 }
 
@@ -704,7 +744,7 @@ a { text-decoration: none; color: inherit; }
 
 .cart-item-emoji {
   font-size: 1.6rem;
-  background: #f3f7ef;
+  background: var(--soft-bg);
   border-radius: 8px;
   padding: 8px;
 }
@@ -725,7 +765,7 @@ a { text-decoration: none; color: inherit; }
   height: 26px;
   border-radius: 50%;
   border: 1px solid var(--border);
-  background: white;
+  background: var(--card-bg);
   cursor: pointer;
   font-weight: 700;
   color: var(--green-dark);
@@ -767,7 +807,7 @@ a { text-decoration: none; color: inherit; }
 .modal-overlay.open { display: flex; }
 
 .modal {
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--radius);
   padding: 32px;
   max-width: 380px;
@@ -808,14 +848,14 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   justify-content: center;
   font-size: 8rem;
-  background: #f3f7ef;
+  background: var(--soft-bg);
   border-radius: var(--radius);
   border: 1px solid var(--border);
 }
 
 .product-category-tag {
   display: inline-block;
-  background: #eaf6ec;
+  background: var(--soft-hover);
   color: var(--green-dark);
   font-size: 0.8rem;
   font-weight: 600;
@@ -857,7 +897,7 @@ a { text-decoration: none; color: inherit; }
   height: 32px;
   border-radius: 50%;
   border: 1px solid var(--border);
-  background: white;
+  background: var(--card-bg);
   cursor: pointer;
   font-weight: 700;
   font-size: 1.1rem;

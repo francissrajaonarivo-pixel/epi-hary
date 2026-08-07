@@ -6,6 +6,11 @@
 <title>EPI-HARY — Épicerie en ligne</title>
 <meta name="description" content="EPI-HARY, votre épicerie en ligne : produits frais, commande simple, livraison rapide.">
 <link rel="icon" type="image/svg+xml" href="images/logo-mark.svg">
+<script>
+  if (localStorage.getItem("epifrais_theme") === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+  }
+</script>
 
 <!-- Aperçu de lien (WhatsApp, Facebook, etc.) -->
 <meta property="og:type" content="website">
@@ -33,9 +38,12 @@
       <a href="#a-propos">À propos</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="cart-btn" id="cartBtn">
-      🛒 <span id="cartCount">0</span>
-    </button>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Basculer le mode nuit">🌙</button>
+      <button class="cart-btn" id="cartBtn">
+        🛒 <span id="cartCount">0</span>
+      </button>
+    </div>
   </div>
 </header>
 
