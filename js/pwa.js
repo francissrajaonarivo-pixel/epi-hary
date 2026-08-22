@@ -32,5 +32,8 @@ if (installBtn && !isStandalone()) {
   window.addEventListener("appinstalled", () => {
     installBtn.hidden = true;
     deferredInstallPrompt = null;
+    if (typeof gtag === "function") {
+      gtag("event", "pwa_install");
+    }
   });
 }

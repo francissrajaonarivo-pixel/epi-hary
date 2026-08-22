@@ -1,4 +1,4 @@
-const CACHE_NAME = "epi-hary-v2";
+const CACHE_NAME = "epi-hary-v3";
 
 const APP_SHELL = [
   "./",
@@ -11,6 +11,7 @@ const APP_SHELL = [
   "js/app.js",
   "js/product.js",
   "js/pwa.js",
+  "js/share.js",
   "images/logo.svg",
   "images/logo-mark.svg",
   "images/icon-192.png",
