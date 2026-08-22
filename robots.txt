@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://francissrajaonarivo-pixel.github.io/epi-hary/sitemap.xml
