@@ -1,9 +1,10 @@
-const CACHE_NAME = "epi-hary-v1";
+const CACHE_NAME = "epi-hary-v2";
 
 const APP_SHELL = [
   "./",
   "index.html",
   "product.html",
+  "privacy.html",
   "manifest.webmanifest",
   "css/style.css",
   "js/store.js",

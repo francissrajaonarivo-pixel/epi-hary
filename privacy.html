@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité — EPI-HARY</title>
+<meta name="description" content="Politique de confidentialité d'EPI-HARY : données collectées, cookies publicitaires, et vos droits.">
+<link rel="icon" type="image/svg+xml" href="images/logo-mark.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta name="theme-color" content="#2f9e44">
+<script>
+  if (localStorage.getItem("epifrais_theme") === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .legal-page { padding: 48px 0 80px; max-width: 780px; }
+  .legal-page h1 { margin-bottom: 8px; }
+  .legal-page .legal-updated { color: var(--text-muted); margin-bottom: 32px; }
+  .legal-page h2 { margin: 32px 0 12px; font-size: 1.2rem; }
+  .legal-page p, .legal-page li { color: var(--text); margin-bottom: 12px; }
+  .legal-page ul { padding-left: 20px; margin-bottom: 12px; }
+  .legal-page a { color: var(--green); text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><img src="images/logo.svg" alt="EPI-HARY" class="logo-img"></a>
+    <nav class="main-nav">
+      <a href="index.html#produits">Produits</a>
+      <a href="index.html#livraison-paiement">Livraison</a>
+      <a href="index.html#a-propos">À propos</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Basculer le mode nuit">🌙</button>
+    </div>
+  </div>
+</header>
+
+<main class="container legal-page">
+  <h1>Politique de confidentialité</h1>
+  <p class="legal-updated">Dernière mise à jour : 22 août 2026</p>
+
+  <p>EPI-HARY (« nous ») respecte votre vie privée. Cette page explique quelles données sont collectées lorsque vous utilisez notre site et notre application, et comment elles sont utilisées.</p>
+
+  <h2>Données que nous collectons</h2>
+  <ul>
+    <li><strong>Panier d'achat</strong> : les articles que vous ajoutez sont stockés localement dans votre navigateur (localStorage) et ne sont pas transmis à un serveur.</li>
+    <li><strong>Formulaire de contact</strong> : nom, email et message que vous saisissez volontairement pour nous contacter.</li>
+    <li><strong>Commandes</strong> : lorsque vous finalisez une commande, le contenu de votre panier est transmis via WhatsApp, un service tiers régi par sa propre politique de confidentialité.</li>
+  </ul>
+
+  <h2>Cookies et publicité</h2>
+  <p>Notre site utilise Google AdSense pour afficher des publicités. Google et ses partenaires peuvent utiliser des cookies et des identifiants pour diffuser des annonces personnalisées en fonction de vos visites sur ce site et d'autres sites.</p>
+  <p>Vous pouvez désactiver la publicité personnalisée en consultant les <a href="https://adssettings.google.com/" target="_blank" rel="noopener">paramètres des annonces Google</a>, ou en consultant <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">comment Google utilise les données des sites partenaires</a>.</p>
+
+  <h2>Partage des données</h2>
+  <p>Nous ne vendons pas vos données personnelles. Les seules données partagées avec des tiers sont celles nécessaires au fonctionnement du site : WhatsApp (traitement de votre commande) et Google AdSense (affichage des publicités).</p>
+
+  <h2>Vos droits</h2>
+  <p>Vous pouvez nous contacter à tout moment pour toute question concernant vos données, via WhatsApp ou par téléphone au 032 90 426 87 ou au 038 95 101 34.</p>
+
+  <h2>Application installable (PWA)</h2>
+  <p>EPI-HARY peut être installée comme application sur votre téléphone ou ordinateur. L'application utilise exactement le même site et les mêmes données que la version web — aucune information supplémentaire n'est collectée du fait de l'installation.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 EPI-HARY. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+  const themeToggle = document.getElementById("themeToggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      if (isDark) {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("epifrais_theme", "light");
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("epifrais_theme", "dark");
+      }
+    });
+  }
+</script>
+<script src="js/pwa.js"></script>
+</body>
+</html>

@@ -696,6 +696,20 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.9rem;
 }
 
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-inner a {
+  color: var(--text-muted);
+  text-decoration: underline;
+}
+
+.footer-inner a:hover { color: var(--green); }
+
 /* Cart drawer */
 .cart-overlay {
   position: fixed;
