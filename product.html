@@ -115,6 +115,31 @@
   </div>
 </div>
 
+<!-- Partage -->
+<div class="modal-overlay" id="shareModalOverlay">
+  <div class="modal share-modal">
+    <h3>Partager EPI-HARY</h3>
+    <p>Copiez le lien ou envoyez-le directement :</p>
+    <div class="share-link-row">
+      <input type="text" id="shareLinkInput" readonly value="https://francissrajaonarivo-pixel.github.io/epi-hary/">
+      <button class="btn btn-primary" id="copyLinkBtn">Copier</button>
+    </div>
+    <div class="share-options">
+      <a class="share-option" id="shareWhatsapp" target="_blank" rel="noopener">
+        <span class="share-option-icon">💬</span> WhatsApp
+      </a>
+      <a class="share-option" id="shareFacebook" target="_blank" rel="noopener">
+        <span class="share-option-icon">📘</span> Facebook
+      </a>
+      <button class="share-option" id="shareMoreBtn" type="button" hidden>
+        <span class="share-option-icon">📤</span> Plus d'options
+      </button>
+    </div>
+    <p class="share-note">Bluetooth et Xender ne peuvent pas être lancés directement depuis un site web : sur téléphone, ouvrez « Plus d'options » puis choisissez Bluetooth ou Xender dans la liste de votre appareil.</p>
+    <button class="btn" id="closeShareModal">Fermer</button>
+  </div>
+</div>
+
 <script src="js/store.js"></script>
 <script src="js/product.js"></script>
 <script src="js/pwa.js"></script>

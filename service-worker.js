@@ -1,4 +1,4 @@
-const CACHE_NAME = "epi-hary-v4";
+const CACHE_NAME = "epi-hary-v5";
 
 const APP_SHELL = [
   "./",

@@ -874,6 +874,60 @@ a { text-decoration: none; color: inherit; }
 .modal p { color: var(--text-muted); margin-bottom: 14px; }
 .modal .payment-list { text-align: left; margin-bottom: 14px; }
 
+.share-modal { max-width: 420px; }
+
+.share-link-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.share-link-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--soft-bg);
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.share-link-row .btn { padding: 10px 18px; white-space: nowrap; }
+
+.share-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.share-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.share-option:hover { background: var(--soft-bg); }
+
+.share-option-icon { font-size: 1.2rem; }
+
+.share-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
 @media (max-width: 640px) {
   .main-nav { display: none; }
   .hero h1 { font-size: 1.9rem; }
