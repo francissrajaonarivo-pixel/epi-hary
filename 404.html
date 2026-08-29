@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page introuvable — EPI-HARY</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="images/logo-mark.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta name="theme-color" content="#2f9e44">
+<script>
+  if (localStorage.getItem("epifrais_theme") === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .error-page {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 48px 24px;
+  }
+  .error-page .error-emoji { font-size: 3rem; margin-bottom: 8px; }
+  .error-page h1 { margin-bottom: 8px; }
+  .error-page p { color: var(--text-muted); margin-bottom: 24px; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><img src="images/logo.svg" alt="EPI-HARY" class="logo-img"></a>
+    <nav class="main-nav">
+      <a href="index.html#produits">Produits</a>
+      <a href="index.html#livraison-paiement">Livraison</a>
+      <a href="index.html#a-propos">À propos</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Basculer le mode nuit">🌙</button>
+    </div>
+  </div>
+</header>
+
+<main class="container error-page">
+  <div class="error-emoji">🧺</div>
+  <h1>Page introuvable</h1>
+  <p>Cette page n'existe pas ou plus. Retournez à l'épicerie !</p>
+  <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2026 EPI-HARY. Tous droits réservés.</p>
+    <a href="privacy.html">Politique de confidentialité</a>
+  </div>
+</footer>
+
+<script>
+  const themeToggle = document.getElementById("themeToggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      if (isDark) {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("epifrais_theme", "light");
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("epifrais_theme", "dark");
+      }
+    });
+  }
+</script>
+</body>
+</html>
